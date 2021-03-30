@@ -1,14 +1,14 @@
 FROM node:12.4.0
-EXPOSE 3001
+EXPOSE 3004
 
-WORKDIR /home/server2
+WORKDIR /home/server4
 
-# COPY package.json /home/server2
+# COPY ../app/package.json /home/server3
 # COPY yarn.lock /home/server1/
 
 # RUN npm ci
 
-COPY . /home/server2
+COPY /app /home/server4
 
 # RUN yarn && yarn start
 RUN yarn

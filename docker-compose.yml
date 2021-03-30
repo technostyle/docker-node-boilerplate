@@ -4,9 +4,7 @@ services:
   server1:
     build: ./server1
     hostname: server1
-    environment:
-      - PORT=3000
-    env_file: ./.server1.env
+    env_file: .server1.env
     ports:
       - "3000:3000"
 
@@ -16,3 +14,21 @@ services:
     env_file: .server2.env
     ports:
       - "3001:3001"
+
+  server3:
+    build:
+      context: .
+      dockerfile: ./server3/Dockerfile
+    hostname: server3
+    env_file: .server3.env
+    ports:
+      - "3003:3003"
+
+  server4:
+    build: 
+      context: .
+      dockerfile: ./server4/Dockerfile
+    hostname: server4
+    env_file: .server4.env
+    ports:
+      - "3004:3004"

@@ -3,12 +3,13 @@ EXPOSE 3000
 
 WORKDIR /home/server1
 
-COPY package.json /home/server1
+# COPY package.json /home/server1
 # COPY yarn.lock /home/server1/
 
 # RUN npm ci
 
 COPY . /home/server1
+# COPY ../server /home/server1
 
 # RUN yarn && yarn start
 RUN yarn
