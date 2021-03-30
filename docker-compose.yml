@@ -11,7 +11,7 @@ services:
       - "3000:3000"
 
   server2:
-    build: ./server1
+    build: ./server2
     hostname: server2
     env_file: .server2.env
     ports:

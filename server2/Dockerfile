@@ -1,14 +1,18 @@
 FROM node:12.4.0
 EXPOSE 3001
 
-# WORKDIR /home/server1
+WORKDIR /home/server2
 
-# COPY package.json /home/server1/
-# COPY package-lock.json /home/server1/
+COPY package.json /home/server2
+# COPY yarn.lock /home/server1/
 
 # RUN npm ci
 
 COPY . /home/server2
 
-# RUN npm install
-ENTRYPOINT node index.js
+# RUN yarn && yarn start
+RUN yarn
+# RUN node ./index.js
+# ENTRYPOINT node
+# CMD npm install && npm run start
+CMD ["yarn", "start"]
