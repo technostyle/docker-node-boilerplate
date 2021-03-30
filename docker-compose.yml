@@ -1,0 +1,18 @@
+# docker-compose.yml
+version: "3.3"
+services:
+  server1:
+    build: ./server1
+    hostname: server1
+    environment:
+      - PORT=3000
+    env_file: ./.server1.env
+    ports:
+      - "3000:3000"
+
+  server2:
+    build: ./server1
+    hostname: server2
+    env_file: .server2.env
+    ports:
+      - "3001:3001"
