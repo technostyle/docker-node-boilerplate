@@ -1,12 +1,14 @@
+require("dotenv").config();
 const path = require("path");
+const { DefinePlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // const publicPath = PUBLIC_URL_MOCK;
-// const publicPath = process.env.PUBLIC_URL;
-const publicPort = process.env.PORT;
+const publicPath = process.env.PUBLIC_URL;
+// const publicPort = process.env.PORT;
 
-// console.log(process.env)
-console.log({publicPort})
+console.log({publicPath})
+// console.log({publicPort})
 
 module.exports = {
   entry: {
@@ -22,6 +24,9 @@ module.exports = {
   devtool: "source-map",
   mode: "production",
   plugins: [
+    new DefinePlugin({
+      "process.env.PUBLIC_URL": JSON.stringify(process.env.PUBLIC_URL),
+    }),
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),

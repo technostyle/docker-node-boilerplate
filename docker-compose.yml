@@ -1,43 +1,52 @@
 # docker-compose.yml
 version: "3.3"
 services:
-  server1:
-    build: ./server1
-    hostname: server1
-    env_file: .server1.env
-    ports:
-      - "3000:3000"
+  # server1:
+  #   build: ./server1
+  #   hostname: server1
+  #   env_file: .server1.env
+  #   ports:
+  #     - "3000:3000"
 
-  server2:
-    build: ./server2
-    hostname: server2
-    env_file: .server2.env
-    ports:
-      - "3001:3001"
+  # server2:
+  #   build: ./server2
+  #   hostname: server2
+  #   env_file: .server2.env
+  #   ports:
+  #     - "3001:3001"
 
-  server3:
-    build:
-      context: .
-      dockerfile: ./server3/Dockerfile
-    hostname: server3
-    env_file: .server3.env
-    ports:
-      - "3003:3003"
+  # server3:
+  #   build:
+  #     context: .
+  #     dockerfile: ./server3/Dockerfile
+  #   hostname: server3
+  #   env_file: .server3.env
+  #   ports:
+  #     - "3003:3003"
 
-  server4:
+  # server4:
+  #   build: 
+  #     context: .
+  #     dockerfile: ./server4/Dockerfile
+  #   hostname: server4
+  #   env_file: .server4.env
+  #   ports:
+  #     - "3004:3004"
+
+  # server5:
+  #   build: 
+  #     context: .
+  #     dockerfile: ./server5/Dockerfile
+  #   hostname: server5
+  #   env_file: .server5.env
+  #   ports:
+  #     - "3005:3005"
+
+  server6:
     build: 
       context: .
-      dockerfile: ./server4/Dockerfile
-    hostname: server4
-    env_file: .server4.env
+      dockerfile: ./server6/Dockerfile
+    hostname: server6
+    env_file: .server6.env
     ports:
-      - "3004:3004"
-
-  server5:
-    build: 
-      context: .
-      dockerfile: ./server5/Dockerfile
-    hostname: server5
-    env_file: .server5.env
-    ports:
-      - "3005:3005"
+      - "3006:3006"
