@@ -32,3 +32,12 @@ services:
     env_file: .server4.env
     ports:
       - "3004:3004"
+
+  server5:
+    build: 
+      context: .
+      dockerfile: ./server5/Dockerfile
+    hostname: server5
+    env_file: .server5.env
+    ports:
+      - "3005:3005"
